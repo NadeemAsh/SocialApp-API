@@ -1,0 +1,23 @@
+{
+  "name": "social-app-backend",
+  "version": "1.0.0",
+  "description": "Backend Server for our Social Application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Nadeem Ashraf",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.1.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "graphql": "^15.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
