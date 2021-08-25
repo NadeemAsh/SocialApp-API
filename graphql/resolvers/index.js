@@ -1,4 +1,5 @@
 const postsResolvers = require('./posts');
+const commentsResolver = require('./comments');
 const usersResolvers = require('./users');
 
 //Combine all the resolvers together
@@ -8,6 +9,7 @@ module.exports = {
     },
     Mutation:{
         ...usersResolvers.Mutation,
-        ...postsResolvers.Mutation
+        ...postsResolvers.Mutation,
+        ...commentsResolver.Mutation
     }
 }
