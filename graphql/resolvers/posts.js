@@ -27,6 +27,11 @@ module.exports = {
   Mutation: {
     async createPost(_, { body }, context) {
       const user = checkAuth(context);
+
+      if(body.trim()===''){
+        throw new Error('Post cannot be empty!');
+      }
+
       const newPost = new Post({
         body,
         user: user.id,
@@ -72,9 +77,9 @@ module.exports = {
         }
         await post.save();
         return post;
-      }else{
-        throw new UserInputError('Post not Found');
+      } else {
+        throw new UserInputError("Post not Found");
       }
     },
-  },
+  }
 };

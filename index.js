@@ -1,5 +1,6 @@
 const { ApolloServer } = require("apollo-server");
-const gql = require("graphql-tag");
+// const { PubSub } = require('graphql-subscriptions');
+// const express = require('express');
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
@@ -7,6 +8,8 @@ dotenv.config();
 //TypeDefs and Resolvers
 const typeDefs = require("./graphql/typeDefs");
 const resolvers = require("./graphql/resolvers");
+
+// const pubsub = new PubSub();
 
 //Configure Apollo Server
 const server = new ApolloServer({
@@ -29,5 +32,5 @@ mongoose
     return server.listen({ port: 5000 });
   })
   .then((res) => {
-    console.log(`Server Running at ${res.url}`);
+    console.log(`Server Running at ${res.port}`);
   });
